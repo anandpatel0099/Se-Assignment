@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+	
+	<h:head>
+		<title>Signup</title>
+		<meta name="viewport" content="width=device-width, initial-scale=0.5"></meta>
+    
+    	<link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css" rel="stylesheet"></link>
+    	<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet"></link>
+    	<style type="text/css"/>
+	</h:head>
+	<h:body>
+			<h:form><br/>
+			Username:<br/><h:inputText id="username" styleClass="form-control" value="#{register.username}" a:placeholder="Enter Username" required="true" requiredMessage="Enter Username"/>
+				<h:message for="username" style="color:fbbc05"/><br/><br/>
+				Password: <br/><h:inputSecret id="password" styleClass="form-control" value="#{login.password}" a:placeholder="Enter Password" required="true" requiredMessage="Enter Password">
+				<f:validateRegex pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})" ></f:validateRegex></h:inputSecret>
+				<h:message for="password" style="color:fbbc05"/><br/><br/>
+				First Name:<br/><h:inputText id="firstname" styleClass="form-control" value="#{register.firstname}" a:placeholder="First Name" required="true" requiredMessage="Enter First name"/>
+				<h:message for="firstname" style="color:fbbc05"/><br/><br/>
+				Last Name:<br/><h:inputText id="lastname" styleClass="form-control" value="#{register.lastname}" a:placeholder="Last Name" required="true" requiredMessage="Enter Last name"/>
+				<h:message for="lastname" style="color:fbbc05"/><br/><br/>
+				Address:<br/><h:inputText id="address" styleClass="form-control" value="#{register.address}" a:placeholder="Enter Address" required="true" requiredMessage="Enter Address"/>
+				<h:message for="address" style="color:fbbc05"/><br/><br/>
+				Email:<br/><h:inputText id="email" styleClass="form-control" value="#{register.email}" a:placeholder="Enter Email" required="true" requiredMessage="Enter Email id" validatorMessage="please enter valid email">
+				<f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.(com|net|‌​org|edu)"/></h:inputText>
+				<h:message for="email" style="color:fbbc05"/><br/><br/>
+				Phone number:<br/><h:inputText id="phonenumber" styleClass="form-control" a:type="tel" value="#{register.phonenumber}" a:placeholder="Enter 10 digit phonenumber" required="true" requiredMessage="Please enter phone number" validatorMessage="Enter valid phone number">
+				<f:validateRegex pattern="[0-9]{10}"></f:validateRegex></h:inputText>
+				<h:message for="phonenumber" style="color:fbbc05"/><br/><br/>
+				
+				
+				
+				
+				<h:commandButton styleClass="btn btn-large btn-primary" value="Register" action="response.xhtml"/><br/><br/>
+				
+				Already have an account?  <h:outputLink value="Login.xhtml">Login</h:outputLink>
+				</h:form>
+			<script src="js/jquery.js"></script>
+			<script src="http://code.jquery.com/jquery.js"></script>
+    		<script src="js/bootstrap.min.js"></script>
+    					
+    		
+	</h:body>
+</html> 
